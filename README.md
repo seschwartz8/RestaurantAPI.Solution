@@ -1,6 +1,6 @@
-# API for Restaurants/Shops
+# Restaurants API
 
-#### C#/.NET Core API for restaurants/shops with full CRUD functionality. Current version: 04.03.20
+#### C#/.NET Core API for restaurants with full CRUD functionality. Current version: 04.03.20
 
 #### By Sarah "Sasa" Schwartz
 
@@ -19,7 +19,7 @@
 
 ## Description
 
-Epicodus Friday project: C#/.NET Core API for restaurants/shops with full CRUD functionality.
+Epicodus Friday project: C#/.NET Core API for restaurants with full CRUD functionality.
 
 ## Installation Requirements
 
@@ -34,13 +34,21 @@ Epicodus Friday project: C#/.NET Core API for restaurants/shops with full CRUD f
 - \$dotnet run (runs the server at localhost:5000)
 - Call this API with your web application or test out the requests using Postman.
 
-## User Stories
+## API Documentation
 
-- As a user, I want to be able to GET all photos related to a specific tag.
-- As a user, I want to be able to POST photos to a specific tag.
-- As a user, I want to be able to see a list of all tags.
-- As a user, I want to input date parameters and retrieve only photos posted during that timeframe.
-- As a user, I want to be able to PUT and DELETE photos, but only if I posted them.
+- Base url: http://localhost:5000
+
+| Action                 | Method                                                                                                                           | Endpoint                                            |
+| :--------------------- | :------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------- |
+| List all restaurants   | GET                                                                                                                              | /restaurants                                        |
+| As the business owner, | I want to add new employees                                                                                                      | so that I can view the complete list                |  |
+| As the salon owner,    | I need to be able to select a stylist, see their details, and see a list of all clients that belong to that stylist              | to stay organized                                   |
+| As the business owner, | I want to see the clients belonging to those employees                                                                           | to simplify payment accounts                        |
+| As the salon owner,    | I need to be able to add new clients to a specific stylist (I should not be able to add a client if no stylists have been added) | so that I don't have unassigned clients by mistake. |
+| As the business owner, | I want name and preferred employee for clients visible                                                                           | so that my tracker is useful from both sides        |
+| As the business owner, | I want a splash page                                                                                                             | so that I can access any sides of my site           |
+| As the business owner, | I want to be able to delete clients or employees                                                                                 | in case of changes to the business                  |
+| As the business owner, | I want to be able to edit clients or employees                                                                                   | in case of changes, or user error                   |
 
 ## Known Bugs
 
