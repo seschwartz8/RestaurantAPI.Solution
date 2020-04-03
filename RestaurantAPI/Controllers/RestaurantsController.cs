@@ -53,5 +53,15 @@ namespace RestaurantAPI.Controllers
       _db.Entry(restaurant).State = EntityState.Modified;
       _db.SaveChanges();
     }
+
+    // Delete api/restaurants/5
+    // Delete specific restaurant
+    [HttpDelete("{id}")]
+    public void Delete(int id)
+    {
+      var restaurantToDelete = _db.Restaurants.FirstOrDefault(entry => entry.RestaurantId == id);
+      _db.Restaurants.Remove(restaurantToDelete);
+      _db.SaveChanges();
+    }
   }
 }
