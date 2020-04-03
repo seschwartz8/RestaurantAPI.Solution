@@ -27,6 +27,14 @@ namespace RestaurantAPI.Controllers
       return query.ToList();
     }
 
+    // GET api/restaurants/5
+    // Retrieve specific restaurant
+    [HttpGet("{id}")]
+    public ActionResult<Restaurant> Get(int id)
+    {
+      return _db.Restaurants.FirstOrDefault(entry => entry.RestaurantId == id);
+    }
+
     // POST api/restaurants
     // Add new restaurant
     [HttpPost]
@@ -35,13 +43,6 @@ namespace RestaurantAPI.Controllers
       _db.Restaurants.Add(restaurant);
       _db.SaveChanges();
     }
-
-    // // GET api/photos/5
-    // [HttpGet("{id}")]
-    // public ActionResult<Photo> Get(int id)
-    // {
-    //   return _db.Photos.FirstOrDefault(entry => entry.PhotoId == id);
-    // }
 
     // // PUT api/photos/8
     // [HttpPut("{id}")]
