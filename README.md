@@ -60,6 +60,12 @@ Epicodus Friday project: C#/.NET Core API for restaurants with full CRUD functio
 - Example query: http://localhost:5000/api/restaurants/?rating=4&name=burger+king&page=3&size=5
   - This query returns restaurants with a rating of 4 and name of "burger king". It starts at page 3 with 5 results per page.
 
+#### Pagination
+
+- This API returns paginated results, with a default page size of 20 results per page, and a max page size of 50 results per page.
+- The default page number is set to 1.
+- See the [search parameters](#search-parameters) above for information on how to adjust page size and number.
+
 ## Known Bugs
 
 - No known bugs
