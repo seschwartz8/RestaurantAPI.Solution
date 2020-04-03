@@ -21,9 +21,19 @@ namespace RestaurantAPI.Controllers
     // GET api/restaurants
     // List all restaurants
     [HttpGet]
-    public ActionResult<IEnumerable<Restaurant>> Get()
+    public ActionResult<IEnumerable<Restaurant>> Get(string name, int rating)
     {
       var query = _db.Restaurants.AsQueryable();
+
+      if (name != null)
+      {
+        query = query.Where(entry => entry.Name == name);
+      }
+      if (rating > 0)
+      {
+        query = query.Where(entry => entry.Rating == rating);
+      }
+
       return query.ToList();
     }
 
