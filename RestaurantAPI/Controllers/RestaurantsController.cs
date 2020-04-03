@@ -83,5 +83,16 @@ namespace RestaurantAPI.Controllers
       _db.Restaurants.Remove(restaurantToDelete);
       _db.SaveChanges();
     }
+
+    // GET api/restaurants/random
+    // Get random restaurant
+    [HttpGet("random")]
+    public ActionResult<Restaurant> GetRandom()
+    {
+      var query = _db.Restaurants.AsQueryable().ToList();
+      Random rnd = new Random();
+      var randomIndex = rnd.Next(0, query.Count);
+      return query[randomIndex];
+    }
   }
 }
