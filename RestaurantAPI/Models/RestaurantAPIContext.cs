@@ -6,6 +6,6 @@ namespace RestaurantAPI.Models
   {
     public RestaurantAPIContext(DbContextOptions<RestaurantAPIContext> options) : base(options) { }
 
-    public DbSet<Place> Places { get; set; }
+    public DbSet<Restaurant> Restaurants { get; set; }
   }
 }

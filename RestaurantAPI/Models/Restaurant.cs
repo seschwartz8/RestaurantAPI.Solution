@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RestaurantAPI.Models
 {
-  public class Place
+  public class Restaurant
   {
 
   }
