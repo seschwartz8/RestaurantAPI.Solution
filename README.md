@@ -42,13 +42,14 @@ Epicodus Friday project: C#/.NET Core API for restaurants with full CRUD functio
 
 #### Routes
 
-| Action                           | Method | Endpoint              |
-| :------------------------------- | :----- | :-------------------- |
-| List all restaurants (paginated) | GET    | /api/restaurants      |
-| Retrieve specific restaurant     | GET    | /api/restaurants/{id} |
-| Create restaurant                | POST   | /api/restaurants      |
-| Edit restaurant                  | PUT    | /api/restaurants/{id} |
-| Delete restaurant                | DELETE | /api/restaurants/{id} |
+| Action                           | Method | Endpoint                |
+| :------------------------------- | :----- | :---------------------- |
+| List all restaurants (paginated) | GET    | /api/restaurants        |
+| Retrieve specific restaurant     | GET    | /api/restaurants/{id}   |
+| Create restaurant                | POST   | /api/restaurants        |
+| Edit restaurant                  | PUT    | /api/restaurants/{id}   |
+| Delete restaurant                | DELETE | /api/restaurants/{id}   |
+| Retrieve random restaurant       | GET    | /api/restaurants/random |
 
 #### Search Parameters
 
