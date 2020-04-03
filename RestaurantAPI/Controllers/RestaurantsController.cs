@@ -19,7 +19,7 @@ namespace RestaurantAPI.Controllers
     }
 
     // GET api/restaurants
-    // Lists all restaurants
+    // List all restaurants
     [HttpGet]
     public ActionResult<IEnumerable<Restaurant>> Get()
     {
@@ -27,42 +27,14 @@ namespace RestaurantAPI.Controllers
       return query.ToList();
     }
 
-    // // GET api/photos/count
-    // [HttpGet("count")]
-    // public ActionResult<int> CountPhotos(string title, string tag, string url, string userName)
-    // {
-    //   var query = _db.Photos.AsQueryable();
-
-    //   if (tag != null)
-    //   {
-    //     query = query.Where(photo => photo.SearchForTag(tag) == true);
-    //   }
-
-    //   if (title != null)
-    //   {
-    //     query = query.Where(entry => entry.Title == title);
-    //   }
-
-    //   if (url != null)
-    //   {
-    //     query = query.Where(entry => entry.Url == url);
-    //   }
-
-    //   if (userName != null)
-    //   {
-    //     query = query.Where(entry => entry.UserName == userName);
-    //   }
-
-    //   return query.ToList().Count();
-    // }
-
-    // // POST api/photos
-    // [HttpPost]
-    // public void Post([FromBody] Photo photo)
-    // {
-    //   _db.Photos.Add(photo);
-    //   _db.SaveChanges();
-    // }
+    // POST api/restaurants
+    // Add new restaurant
+    [HttpPost]
+    public void Post([FromBody] Restaurant restaurant)
+    {
+      _db.Restaurants.Add(restaurant);
+      _db.SaveChanges();
+    }
 
     // // GET api/photos/5
     // [HttpGet("{id}")]
