@@ -21,7 +21,7 @@ namespace RestaurantAPI.Controllers
     // GET api/restaurants
     // List all restaurants
     [HttpGet]
-    public ActionResult<IEnumerable<Restaurant>> Get(string name, int rating)
+    public ActionResult<IEnumerable<Restaurant>> Get(string name, int rating, int page, int size)
     {
       var query = _db.Restaurants.AsQueryable();
 
@@ -34,7 +34,17 @@ namespace RestaurantAPI.Controllers
         query = query.Where(entry => entry.Rating == rating);
       }
 
-      return query.ToList();
+      // Pagination
+      int maxPageSize = 50; // max of 50 restaurants per page
+      int pageSize = 20; //defaults to 20 restaurants per page
+
+      int pageNumber = (page > 0) ? page : 1; //defaults to page 1
+      if (size > 0)
+      {
+        pageSize = (size > maxPageSize) ? maxPageSize : size;
+      }
+
+      return query.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
     }
 
     // GET api/restaurants/5
