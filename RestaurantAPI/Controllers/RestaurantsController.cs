@@ -44,22 +44,14 @@ namespace RestaurantAPI.Controllers
       _db.SaveChanges();
     }
 
-    // // PUT api/photos/8
-    // [HttpPut("{id}")]
-    // public void Put(int id, [FromBody] Photo photo)
-    // {
-    //   photo.PhotoId = id;
-    //   _db.Entry(photo).State = EntityState.Modified;
-    //   _db.SaveChanges();
-    // }
-
-    // // Delete api/photos/5
-    // [HttpDelete("{id}")]
-    // public void Delete(int id)
-    // {
-    //   var photoToDelete = _db.Photos.FirstOrDefault(entry => entry.PhotoId == id);
-    //   _db.Photos.Remove(photoToDelete);
-    //   _db.SaveChanges();
-    // }
+    // PUT api/restaurants/8
+    // Edit specific restaurant
+    [HttpPut("{id}")]
+    public void Put(int id, [FromBody] Restaurant restaurant)
+    {
+      restaurant.RestaurantId = id;
+      _db.Entry(restaurant).State = EntityState.Modified;
+      _db.SaveChanges();
+    }
   }
 }
