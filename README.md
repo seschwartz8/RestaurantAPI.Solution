@@ -36,26 +36,26 @@ Epicodus Friday project: C#/.NET Core API for restaurants with full CRUD functio
 
 ## API Documentation
 
-- Base url: http://localhost:5000/
+- Base url: http://localhost:5000
 
 #### Routes
 
-| Action                           | Method | Endpoint             |
-| :------------------------------- | :----- | :------------------- |
-| List all restaurants (paginated) | GET    | api/restaurants      |
-| Retrieve specific restaurants    | GET    | api/restaurants/{id} |
-| Create restaurant                | POST   | api/restaurants      |
-| Edit restaurant                  | PUT    | api/restaurants/{id} |
-| Delete restaurant                | DELETE | api/restaurants/{id} |
+| Action                           | Method | Endpoint              |
+| :------------------------------- | :----- | :-------------------- |
+| List all restaurants (paginated) | GET    | /api/restaurants      |
+| Retrieve specific restaurant     | GET    | /api/restaurants/{id} |
+| Create restaurant                | POST   | /api/restaurants      |
+| Edit restaurant                  | PUT    | /api/restaurants/{id} |
+| Delete restaurant                | DELETE | /api/restaurants/{id} |
 
 #### Search Parameters
 
-| Parameter | Type   | Example           | Returns                                                    |
-| :-------- | :----- | :---------------- | :--------------------------------------------------------- |
-| Name      | String | ?name=burger+king | Restaurants with name "burger king"                        |
-| Rating    | Int    | ?rating=5         | Restaurants with rating of 5                               |
-| Page      | Int    | ?page=2           | Page 2 of paginated restaurant results (default is page 1) |
-| Size      | Int    | ?size=25          | 25 restaurants per page (default is 50)                    |
+| Parameter | Type   | Example            | Response                                                   |
+| :-------- | :----- | :----------------- | :--------------------------------------------------------- |
+| Name      | String | /?name=burger+king | Restaurants with name "burger king"                        |
+| Rating    | Int    | /?rating=5         | Restaurants with rating of 5                               |
+| Page      | Int    | /?page=2           | Page 2 of paginated restaurant results (default is page 1) |
+| Size      | Int    | /?size=25          | 25 restaurants per page (default is 20 and max is 50)      |
 
 - Example query: http://localhost:5000/api/restaurants/?rating=4&name=burger+king&page=3&size=5
   - This query returns restaurants with a rating of 4 and name of "burger king". It starts at page 3 with 5 results per page.
